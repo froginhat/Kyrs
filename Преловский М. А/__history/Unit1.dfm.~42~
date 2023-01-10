@@ -1,0 +1,188 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = #1059#1095#1077#1090' '#1090#1088#1072#1085#1089#1087#1086#1088#1090#1085#1099#1093' '#1089#1088#1077#1076#1089#1090#1074
+  ClientHeight = 353
+  ClientWidth = 709
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  Menu = MainMenu1
+  OldCreateOrder = False
+  Position = poScreenCenter
+  OnShow = FormShow
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Panel1: TPanel
+    Left = 0
+    Top = 0
+    Width = 709
+    Height = 49
+    Align = alTop
+    TabOrder = 0
+    object Label1: TLabel
+      Left = 8
+      Top = 11
+      Width = 55
+      Height = 22
+      Caption = #1055#1086#1080#1089#1082
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -19
+      Font.Name = 'Times New Roman'
+      Font.Style = [fsBold]
+      ParentFont = False
+    end
+    object Bevel1: TBevel
+      Left = 287
+      Top = 0
+      Width = 2
+      Height = 50
+    end
+    object Edit1: TEdit
+      Left = 69
+      Top = 14
+      Width = 212
+      Height = 21
+      TabOrder = 0
+      OnChange = Edit1Change
+    end
+    object Button1: TButton
+      Left = 324
+      Top = 14
+      Width = 99
+      Height = 22
+      Caption = #1044#1086#1073#1072#1074#1080#1090#1100' '#1079#1072#1087#1080#1089#1100
+      TabOrder = 1
+      OnClick = Button1Click
+    end
+    object Button2: TButton
+      Left = 443
+      Top = 14
+      Width = 96
+      Height = 22
+      Caption = #1048#1079#1084#1077#1085#1080#1090#1100' '#1079#1072#1087#1080#1089#1100
+      TabOrder = 2
+      OnClick = Button2Click
+    end
+    object Button3: TButton
+      Left = 555
+      Top = 14
+      Width = 96
+      Height = 22
+      Caption = #1059#1076#1072#1083#1080#1090#1100' '#1079#1072#1087#1080#1089#1100
+      TabOrder = 3
+      OnClick = Button3Click
+    end
+  end
+  object DBGrid1: TDBGrid
+    Left = 0
+    Top = 49
+    Width = 709
+    Height = 304
+    Align = alClient
+    DataSource = DataSource1
+    TabOrder = 1
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'Tahoma'
+    TitleFont.Style = []
+    Columns = <
+      item
+        Expanded = False
+        FieldName = 'Type'
+        Title.Caption = #1058#1080#1087' '#1072#1074#1090#1086#1084#1086#1073#1080#1083#1103
+        Width = 120
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'NomAvt'
+        Title.Caption = #1053#1086#1084#1077#1088' '#1072#1074#1090#1086#1084#1086#1073#1080#1083#1103
+        Width = 120
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'Time'
+        Title.Caption = #1044#1072#1090#1072' '#1087#1088#1080#1085#1103#1090#1080#1103' '#1085#1072' '#1091#1095#1077#1090
+        Width = 140
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'NameTab'
+        Title.Caption = #1060'.'#1048'.'#1054'.'
+        Width = 180
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'Tel'
+        Title.Caption = #1058#1077#1083#1077#1092#1086#1085
+        Width = 129
+        Visible = True
+      end>
+  end
+  object ADOConnection1: TADOConnection
+    Connected = True
+    ConnectionString = 
+      'Provider=Microsoft.Jet.OLEDB.4.0;User ID=Admin;Data Source='#1040#1074#1090#1086#1084 +
+      #1086#1073#1080#1083#1080'.mdb;Mode=Share Deny None;Persist Security Info=False;Jet O' +
+      'LEDB:System database="";Jet OLEDB:Registry Path="";Jet OLEDB:Dat' +
+      'abase Password="";Jet OLEDB:Engine Type=5;Jet OLEDB:Database Loc' +
+      'king Mode=1;Jet OLEDB:Global Partial Bulk Ops=2;Jet OLEDB:Global' +
+      ' Bulk Transactions=1;Jet OLEDB:New Database Password="";Jet OLED' +
+      'B:Create System Database=False;Jet OLEDB:Encrypt Database=False;' +
+      'Jet OLEDB:Don'#39't Copy Locale on Compact=False;Jet OLEDB:Compact W' +
+      'ithout Replica Repair=False;Jet OLEDB:SFP=False'
+    LoginPrompt = False
+    Mode = cmShareDenyNone
+    Provider = 'Microsoft.Jet.OLEDB.4.0'
+    Left = 272
+    Top = 304
+  end
+  object ADOQuery1: TADOQuery
+    Active = True
+    Connection = ADOConnection1
+    CursorType = ctStatic
+    Parameters = <>
+    SQL.Strings = (
+      'Select * from Avto order by type'
+      '')
+    Left = 352
+    Top = 296
+  end
+  object DataSource1: TDataSource
+    DataSet = ADOQuery1
+    Left = 432
+    Top = 296
+  end
+  object MainMenu1: TMainMenu
+    Left = 488
+    Top = 296
+    object P1: TMenuItem
+      Caption = #1047#1072#1087#1080#1089#1100
+      object N1: TMenuItem
+        Caption = #1044#1086#1073#1072#1074#1080#1090#1100
+        OnClick = N1Click
+      end
+      object N2: TMenuItem
+        Caption = #1048#1079#1084#1077#1085#1080#1090#1100' '
+        OnClick = N2Click
+      end
+      object N3: TMenuItem
+        Caption = #1059#1076#1072#1083#1080#1090#1100
+        OnClick = N3Click
+      end
+    end
+    object N5: TMenuItem
+      Caption = #1057#1087#1088#1072#1074#1082#1072
+      OnClick = N5Click
+    end
+  end
+end
